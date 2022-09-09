@@ -1,7 +1,10 @@
 setup: install build
 
 install:
-	npm install
+	npm cache clean -f
+	npm install -g n
+	n stable
+	#npm install
 
 build:
 	npm run build
