@@ -16,6 +16,10 @@ jobs:
     - uses: actions/setup-node@v3
       with:
           node-version: 18
+          cache: 'npm'
+    - uses: snyk/actions/node@master
+      env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       
     - name: Install dependencies
       run: make setup
